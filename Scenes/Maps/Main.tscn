@@ -33,9 +33,10 @@ shader_parameter/col_depth = 15.0
 shader_parameter/dither_banding = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4txy7"]
-sky_top_color = Color(0.26302713, 0.3192506, 0.39416614, 1)
-sky_horizon_color = Color(0.5204645, 0.52677035, 0.53649926, 1)
-ground_horizon_color = Color(0.5204645, 0.52677035, 0.53649926, 1)
+sky_top_color = Color(0.012, 0.012, 0.045, 1)
+sky_horizon_color = Color(0.05, 0.04, 0.09, 1)
+sky_energy_multiplier = 0.15
+ground_horizon_color = Color(0.12, 0.07, 0.03, 1)
 
 [sub_resource type="Sky" id="Sky_2h353"]
 sky_material = SubResource("ProceduralSkyMaterial_4txy7")
@@ -43,8 +44,18 @@ sky_material = SubResource("ProceduralSkyMaterial_4txy7")
 [sub_resource type="Environment" id="Environment_ohl52"]
 background_mode = 2
 sky = SubResource("Sky_2h353")
+ambient_light_source = 2
+ambient_light_color = Color(0.08, 0.1, 0.2, 1)
+ambient_light_energy = 0.18
 tonemap_mode = 2
 glow_enabled = true
+glow_intensity = 1.4
+glow_bloom = 0.25
+glow_hdr_threshold = 0.75
+fog_enabled = true
+fog_light_color = Color(0.07, 0.08, 0.14, 1)
+fog_density = 0.014
+fog_sky_affect = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cryj1"]
 resource_name = "FireHydrant"
@@ -998,6 +1009,8 @@ environment = SubResource("Environment_ohl52")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1797229740]
 transform = Transform3D(0.89877367, 0.09661016, -0.4276357, 0.26517016, -0.89656335, 0.35476595, -0.3491285, -0.43225062, -0.83142567, 0, 0, 0)
+light_color = Color(0.7, 0.78, 1, 1)
+light_energy = 0.12
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=455042879 instance=ExtResource("1_4txy7")]
@@ -1017,17 +1030,41 @@ mesh = SubResource("ArrayMesh_gjt8o")
 transform = Transform3D(-4.371139e-06, -100.00001, -2.3841862e-05, 0, -2.3841862e-05, 100.00001, -100.000015, 4.371139e-06, 1.0421607e-12, -11.585912, 0, -0.69586945)
 mesh = SubResource("ArrayMesh_tla5c")
 
+[node name="LampLight" type="OmniLight3D" parent="Assets/Props/LampPost_001" unique_id=314565718]
+transform = Transform3D(0.02222222, -1.110223e-16, -2.646978e-23, 1.110223e-16, 0.02222222, 1.0123173e-23, 2.646978e-23, 1.0123173e-23, 0.02222222, 0, 0.044830855, 0.0976413)
+light_color = Color(1, 0.62, 0.18, 1)
+light_energy = 3.5
+omni_range = 10.0
+
 [node name="LampPost_002" type="MeshInstance3D" parent="Assets/Props" unique_id=391754153]
 transform = Transform3D(-4.371139e-06, -100.00001, -2.3841862e-05, 0, -2.3841862e-05, 100.00001, -100.000015, 4.371139e-06, 1.0421607e-12, -13.585912, 0, 21.334843)
 mesh = SubResource("ArrayMesh_06qtf")
+
+[node name="LampLight" type="OmniLight3D" parent="Assets/Props/LampPost_002" unique_id=12759565]
+transform = Transform3D(0.02222222, -1.110223e-16, -2.646978e-23, 1.110223e-16, 0.02222222, 1.01231735e-23, 2.646978e-23, 1.01231735e-23, 0.02222222, 0.0067210793, 0.18365544, 0.09699977)
+light_color = Color(1, 0.62, 0.18, 1)
+light_energy = 3.5
+omni_range = 10.0
 
 [node name="LampPost_003" type="MeshInstance3D" parent="Assets/Props" unique_id=819274582]
 transform = Transform3D(-4.371139e-06, -100.00001, -2.3841862e-05, 0, -2.3841862e-05, 100.00001, -100.000015, 4.371139e-06, 1.0421607e-12, -15.585912, 0, -1.1385002)
 mesh = SubResource("ArrayMesh_jhmxp")
 
+[node name="LampLight" type="OmniLight3D" parent="Assets/Props/LampPost_003" unique_id=1660803243]
+transform = Transform3D(0.02222222, -1.110223e-16, -2.646978e-23, 1.110223e-16, 0.02222222, 1.01231735e-23, 2.646978e-23, 1.01231735e-23, 0.02222222, 0.01799877, -0.04066639, 0.15771784)
+light_color = Color(1, 0.62, 0.18, 1)
+light_energy = 3.5
+omni_range = 10.0
+
 [node name="LampPost_004" type="MeshInstance3D" parent="Assets/Props" unique_id=1836839560]
 transform = Transform3D(-4.3711384e-06, -100.000015, -2.3841862e-05, 0, -2.3841862e-05, 100.000015, -100.000015, 4.371139e-06, 1.0421606e-12, -32.10003, 0, 21.46855)
 mesh = SubResource("ArrayMesh_3a2hc")
+
+[node name="LampLight" type="OmniLight3D" parent="Assets/Props/LampPost_004" unique_id=76592728]
+transform = Transform3D(0.02222222, 1.110223e-16, 0, 0, 0.02222222, 1.012317e-23, 0, 1.012317e-23, 0.02222222, -0.010130882, 0.010973901, 0.1003582)
+light_color = Color(1, 0.62, 0.18, 1)
+light_energy = 3.5
+omni_range = 10.0
 
 [node name="LampPost_005" type="MeshInstance3D" parent="Assets/Props/LampPost_004" unique_id=65163452]
 mesh = SubResource("ArrayMesh_ftahb")
