@@ -51,6 +51,21 @@ demo/
 - Each scene gets its own folder under `Scenes/`, e.g. `Scenes/Town/`
 - Keep the scene file and its script in the same directory
 
+## Reusing the Night Atmosphere in Other Scenes
+
+The night atmosphere is defined by two nodes in `Main.tscn`:
+
+- `WorldEnvironment` — sky, ambient light, fog, glow
+- `DirectionalLight3D` — moonlight (`Color(0.7, 0.78, 1.0)`, energy `0.12`, shadows on)
+
+To reuse in another scene:
+
+1. In `Main.tscn`, select `WorldEnvironment` → Inspector → click the `Environment` resource → **Save As** → `res://Scenes/Maps/night_environment.tres`
+2. In the target scene, add a `WorldEnvironment` node and assign `night_environment.tres` as its Environment
+3. Add a `DirectionalLight3D` and match the moonlight values above (or duplicate the node from Main)
+
+Saving to `.tres` means all scenes share one resource — edits propagate everywhere automatically.
+
 ## Applying PSX Shaders to Meshes
 
 1. Select a `MeshInstance3D` → Material → create a `ShaderMaterial`
