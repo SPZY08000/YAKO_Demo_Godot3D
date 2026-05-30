@@ -2800,6 +2800,14 @@ mesh = SubResource("ArrayMesh_ivht8")
 transform = Transform3D(1, 0, 0, 0, -4.6990557e-08, -1.0572653, 0, 1.0750186, -4.6214538e-08, 1.81, 0.494, -1.146)
 mesh = SubResource("ArrayMesh_j1ec5")
 
+[node name="29_5" type="MeshInstance3D" parent="Map 02/Asset New/Building/Commercial/29" unique_id=1185065209]
+transform = Transform3D(-3.6936125e-08, 0.909, -3.903427e-08, 0, -3.9733653e-08, -0.893, -0.845, -3.9733653e-08, 1.7062421e-15, 0.0771687, 0.37000003, -3.112)
+mesh = SubResource("ArrayMesh_j1ec5")
+
+[node name="29_6" type="MeshInstance3D" parent="Map 02/Asset New/Building/Commercial/29" unique_id=1537664715]
+transform = Transform3D(-3.6936125e-08, -0.909, 3.903427e-08, 0, -3.9733653e-08, -0.893, 0.845, -3.9733653e-08, 1.7062421e-15, -0.09011376, 0.35071436, -2.1134171)
+mesh = SubResource("ArrayMesh_j1ec5")
+
 [node name="29_4" type="MeshInstance3D" parent="Map 02/Asset New/Building/Commercial/29" unique_id=1296702124]
 transform = Transform3D(-1.09, -1.6458543e-07, 7.194257e-15, 0, -4.7645415e-08, -1.09, 1.6458543e-07, -1.09, 4.7645415e-08, 1.4805824, -0.0034358874, -1.9946048)
 mesh = SubResource("ArrayMesh_245gi")
